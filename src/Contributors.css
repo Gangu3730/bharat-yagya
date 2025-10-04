@@ -1,0 +1,86 @@
+.contrib-section {
+  background: #fde8cc;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contrib-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #442200;
+}
+
+.contrib-marquee {
+  overflow: hidden;
+  position: relative;
+  margin: 15px 0;
+}
+
+.contrib-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.contrib-card {
+  background: #fcd9b6;
+  padding: 14px 20px;
+  border-radius: 10px;
+  min-width: 200px;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-size: 14px;
+  color: #333;
+}
+
+.contrib-card span {
+  color: #d12b2b;
+  font-weight: bold;
+}
+
+.contrib-card small {
+  display: block;
+  font-size: 12px;
+  color: #555;
+  margin-top: 3px;
+}
+
+/* Animation Rows */
+.ltr .contrib-track {
+  animation: marquee-ltr 40s linear infinite;
+}
+.rtl .contrib-track {
+  animation: marquee-rtl 40s linear infinite;
+}
+
+@keyframes marquee-ltr {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+@keyframes marquee-rtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Fade edges */
+.contrib-section::before,
+.contrib-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.contrib-section::before {
+  left: 0;
+  background: linear-gradient(to right, #fde8cc, transparent);
+}
+.contrib-section::after {
+  right: 0;
+  background: linear-gradient(to left, #fde8cc, transparent);
+}

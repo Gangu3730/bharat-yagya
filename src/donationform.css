@@ -1,0 +1,310 @@
+/* ================================
+   Seva Donation – Green Layout (Scoped to #raaj-seva)
+   ================================ */
+
+/* --- Page band + title --- */
+#raaj-seva.seva-wrap{
+  background: linear-gradient(180deg, #e8efd9 0%, #dfe8c9 100%);
+  padding: 16px 10px 24px;
+  box-sizing: border-box;
+}
+#raaj-seva .seva-title{
+  text-align:center;
+  margin:6px 0 12px;
+  color:#2c3a15;
+  font-weight:800;
+  font-size:22px;
+  line-height:1.25;
+}
+
+
+/* --- Main Box --- */
+#raaj-seva .donation-box.green-skin{
+  --brand: #8f481c;
+  --brand-2: #9e6007;
+  --border:#cfd8b2;
+  --muted:#eef3e0;
+  --text:#293517;
+
+  max-width:1080px;
+  margin: 0 auto;
+  border:1px solid var(--border);
+  box-shadow: 0 6px 20px rgba(85,107,47,.12);
+  border-radius:14px;
+  background:#f2f6e8;
+  padding:12px;
+  display:grid;
+  grid-template-columns: 1.2fr .9fr;
+  gap:12px;
+  box-sizing: border-box;
+}
+
+/* --- Left Panel (Form) --- */
+#raaj-seva .donation-box.green-skin .donation-form{
+  background: linear-gradient(180deg, #de6e36 0%, #9a5809 100%);
+  border-radius:12px;
+  padding:14px;
+  box-sizing: border-box;
+}
+#raaj-seva .donation-box.green-skin .row-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+#raaj-seva .donation-box.green-skin .field{ width:100%; }
+#raaj-seva .donation-box.green-skin .hide-mobile{ display:block; }
+
+#raaj-seva .donation-box.green-skin .donation-form label{
+  display:block;
+  color:#1d240d;
+  font-weight:700;
+  font-size:13px;
+  margin:6px 0 6px;
+}
+
+/* Inputs / Selects */
+#raaj-seva .donation-box.green-skin input,
+#raaj-seva .donation-box.green-skin select,
+#raaj-seva .donation-box.green-skin textarea{
+  width:100%;
+  height:40px;
+  border:1px solid #d7dfbf;
+  background:#fff;
+  border-radius:10px;
+  padding:8px 10px;
+  color:#111;
+  outline:none;
+  box-sizing:border-box;
+  font:inherit;
+}
+#raaj-seva .donation-box.green-skin textarea{ min-height: 90px; resize: vertical; }
+#raaj-seva .donation-box.green-skin input::placeholder,
+#raaj-seva .donation-box.green-skin textarea::placeholder{ color:#9aa3a1; }
+
+#raaj-seva .donation-box.green-skin input:focus,
+#raaj-seva .donation-box.green-skin select:focus,
+#raaj-seva .donation-box.green-skin textarea:focus{
+  border-color:#b2c18b;
+  box-shadow: 0 0 0 3px rgba(85,107,47,.18);
+}
+
+/* Phone with +91 chip */
+#raaj-seva .donation-box.green-skin .phone-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+#raaj-seva .donation-box.green-skin .phone-wrap .cc{
+  flex:0 0 auto;
+  background:#f3f6ea;
+  border:1px solid #d7dfbf;
+  padding:8px 10px;
+  border-radius:10px;
+  color:#314019;
+  font-weight:700;
+}
+#raaj-seva .donation-box.green-skin .phone-wrap input{ flex:1; }
+
+/* Hint text under DOB */
+#raaj-seva .donation-box.green-skin .hint{
+  display:block;
+  margin-top:6px;
+  font-size:12px;
+  color:#314019;
+}
+
+/* Amount chips */
+#raaj-seva .donation-box.green-skin .chips{
+  margin:8px 0 12px;
+  display:grid;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  gap:8px;
+}
+#raaj-seva .donation-box.green-skin .chips button{
+  background:#f9fbf1;
+  border:1px solid #d7dfbf;
+  color:#314019;
+  border-radius:999px;
+  padding:8px 10px;
+  height:34px;
+  font-weight:800;
+  cursor:pointer;
+  white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease;
+}
+#raaj-seva .donation-box.green-skin .chips button:hover{
+  background:#eef3e0;
+  border-color:#c9d5a7;
+}
+
+/* Donate button */
+#raaj-seva .donation-box.green-skin .donate-btn{
+  margin-top:60px;
+  width:100%;
+  height:42px;
+  border-radius:10px;
+  border:0;
+  background:#593107;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  transition: transform .03s ease, filter .15s ease;
+}
+#raaj-seva .donation-box.green-skin .donate-btn:hover{ filter: brightness(1.03); }
+#raaj-seva .donation-box.green-skin .donate-btn:active{ transform: translateY(1px); }
+
+/* ===== Right-side composite card ===== */
+#raaj-seva .donation-box.green-skin .right-combo{
+  background:#f7faef;
+  border:1px solid #cfd8b2;
+  border-radius:12px;
+  padding:12px;
+}
+#raaj-seva .donation-box.green-skin .rc-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+}
+#raaj-seva .donation-box.green-skin .rc-col{ background:#f7faef; }
+#raaj-seva .donation-box.green-skin .rc-title{
+  display:flex; align-items:center; gap:6px;
+  margin:0 0 8px; font-size:16px; font-weight:800; color:#2c3a15;
+}
+#raaj-seva .donation-box.green-skin .ico{ color:#2f3c19; }
+
+#raaj-seva .donation-box.green-skin .raaj-qr{
+  width:210px; max-width:100%;
+  display:block; margin:4px auto 6px;
+  border:2px solid #9eb476; border-radius:10px;
+}
+
+/* UPI line with tiny copy button */
+#raaj-seva .donation-box.green-skin .upi-line{
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+#raaj-seva .donation-box.green-skin .upi-line code{
+  background:#eef3e0; border:1px solid #d7dfbf;
+  padding:4px 8px; border-radius:6px; font-size:13px;
+}
+#raaj-seva .donation-box.green-skin .micro-copy{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:26px; height:26px; border-radius:6px; border:1px solid #cfd8b2;
+  background:#593107; color:#fff; cursor:pointer;
+  transition:transform .03s ease, filter .15s ease;
+}
+#raaj-seva .donation-box.green-skin .micro-copy:active{ transform: translateY(1px); }
+
+/* Bank list + copy strip */
+#raaj-seva .donation-box.green-skin .bank-list{ list-style:none; margin:0 0 8px; padding:0; }
+#raaj-seva .donation-box.green-skin .bank-list li{
+  margin:6px 0; color:#2f3c19; font-size:14px;
+}
+#raaj-seva .donation-box.green-skin .bank-list b{ font-weight:800; color:#22300f; }
+
+#raaj-seva .donation-box.green-skin .copy-strip{
+  width:100%; height:38px; border:0; border-radius:10px;
+  background:#593107; color:#fff; font-weight:800; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+/* ===== Logo badges – size fix (scoped) ===== */
+#raaj-seva .badges { gap: 10px; }
+
+#raaj-seva .badge.logos{
+  padding: 6px 10px;
+  border: 1px solid #d7dfbf;
+  border-radius: 999px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;          /* chip ki minimum height */
+}
+
+#raaj-seva .badge.logos img{
+  height: 22px;              /* <- yahin se size control karo (18–24px) */
+  width: auto;
+  max-width: 90px;           /* extra-wide SVGs ko limit */
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile par thoda aur compact */
+@media (max-width: 640px){
+  #raaj-seva .badge.logos img{
+    height: 18px;
+    max-width: 72px;
+  }
+}
+
+/* Notes / Support / Badges */
+#raaj-seva .donation-box.green-skin .rc-notes{ margin-top:8px; }
+#raaj-seva .donation-box.green-skin .rc-notes .tiny{
+  font-size:12px; color:#55624a; margin:4px 0; line-height:1.35;
+}
+
+#raaj-seva .donation-box.green-skin .rc-support{ margin-top:8px; }
+#raaj-seva .donation-box.green-skin .rc-support h4{
+  margin:6px 0; font-size:15px; color:#2c3a15; font-weight:800;
+}
+#raaj-seva .donation-box.green-skin .support-row{
+  display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-bottom:8px;
+}
+#raaj-seva .donation-box.green-skin .support-link{
+  display:inline-flex; align-items:center; gap:6px;
+  color:#2a4e0d; text-decoration:none; font-weight:700;
+}
+#raaj-seva .donation-box.green-skin .support-link:hover{ text-decoration:underline; }
+
+#raaj-seva .donation-box.green-skin .badges{ display:flex; gap:8px; flex-wrap:wrap; }
+#raaj-seva .donation-box.green-skin .pill{
+  display:inline-block; padding:6px 12px; border-radius:999px;
+  font-size:12px; font-weight:800; color:#fff;
+}
+#raaj-seva .donation-box.green-skin .pill.green{ background:#27ae60; }
+#raaj-seva .donation-box.green-skin .pill.orange{ background:#ff8c2a; }
+
+#raaj-seva .donation-box.green-skin .badge.logos{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:#fff; border:1px solid #d7dfbf; color:#2f3c19; font-weight:700;
+}
+
+/* Responsive: stack UPI & Bank */
+@media (max-width: 720px){
+  #raaj-seva .donation-box.green-skin .rc-grid{ grid-template-columns: 1fr; gap:12px; }
+}
+
+/* Thank-you box */
+#raaj-seva .donation-box.green-skin .thankyou-box{
+  margin-top:8px;
+  background:#f7faef;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+}
+
+/* Utilities */
+#raaj-seva .donation-box.green-skin .text-center{ text-align:center; }
+#raaj-seva .donation-box.green-skin .d-none{ display:none; }
+
+/* --- Responsive --- */
+@media (max-width: 1060px){
+  #raaj-seva .currency-tabs{ margin-inline: 10px; }
+}
+@media (max-width: 960px){
+  #raaj-seva .donation-box.green-skin{ grid-template-columns: 1fr; }
+  #raaj-seva .donation-box.green-skin .hide-mobile{ display:none; }
+}
+@media (max-width: 640px){
+  #raaj-seva .seva-title{ font-size:20px; }
+  #raaj-seva .donation-box.green-skin .row-2{ grid-template-columns: 1fr; }
+  #raaj-seva .donation-box.green-skin .chips{
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+  #raaj-seva .donation-box.green-skin .raaj-qr{ width:180px; }
+}
+@media (max-width: 420px){
+  #raaj-seva .donation-box.green-skin .chips{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
