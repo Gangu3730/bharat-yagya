@@ -5,7 +5,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Nice container width */
+/* Nice container width (Tailwind 4 syntax) */
 .container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem; /* same as max-w-7xl */
+  padding-inline: 1rem; /* px-4 */
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem; /* sm:px-6 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem; /* lg:px-8 */
+  }
 }
