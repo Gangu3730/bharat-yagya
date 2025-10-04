@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   css: {
     modules: {
-      exclude: [/index\.css$/],
+      exclude: [/index\.css$/], // Prevent index.css from being treated as a CSS module
     },
   },
 });
