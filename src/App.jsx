@@ -8,7 +8,6 @@ import VideoCarousel from "./VideoCarousel";
 import FAQSection from "./FAQSection";
 import NationPledge from "./NationPledge";
 
-
 function Section({ id, className = "", children }) {
   return (
     <section id={id} className={`scroll-mt-24 ${className}`}>
@@ -39,18 +38,16 @@ export default function App() {
       <Section id="donation-form" className="bg-orange-50">
         <DonationForm />
       </Section>
-         <Section id="donation-form" className="bg-orange-50">
+
+      <Section id="video-carousel" className="bg-orange-50">
         <VideoCarousel />
       </Section>
-       <Section id="donation-form" className="bg-orange-50">
-        <FAQSection /> 
+
+      <Section id="faq-section" className="bg-orange-50">
+        <FAQSection />
       </Section>
-       <NationPledge />
-      
 
-
- 
-
+      <NationPledge />
     </main>
   );
 }
