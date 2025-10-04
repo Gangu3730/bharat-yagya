@@ -10,16 +10,17 @@
     "vercel-build": "npm install --legacy-peer-deps && vite build"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet-async": "^2.0.5",
-    "tailwindcss": "^3.4.13",
-    "vite": "^5.4.10"
+    "react-helmet-async": "^2.0.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.0.4",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6"
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.8"
   }
 }
