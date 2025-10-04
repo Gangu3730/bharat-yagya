@@ -7,6 +7,7 @@ import Contributors from "./contributors";
 import VideoCarousel from "./VideoCarousel";
 import FAQSection from "./FAQSection";
 import NationPledge from "./NationPledge";
+import './index.css';
 
 function Section({ id, className = "", children }) {
   return (
