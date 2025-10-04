@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const DonationOptionCards = () => {
   const cards = [
@@ -21,34 +21,43 @@ const DonationOptionCards = () => {
   ];
 
   return (
-    <div className="container py-16">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
+    <div className="container py-16 text-center">
+      <h2 className="text-3xl sm:text-4xl font-extrabold mb-12 text-orange-700 tracking-tight">
         Seva / Donation Options
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center">
         {cards.map((card, i) => (
           <div
             key={i}
-            className="bg-white rounded-xl shadow-lg overflow-hidden"
+            className="group bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
           >
-            <div className="relative h-48 flex">
+            <div className="relative flex h-52">
               <img
                 src={card.img}
                 alt={card.title}
                 className="w-1/2 h-full object-cover"
               />
-              <div className="w-1/2 bg-orange-600 text-white flex flex-col justify-between p-4">
+
+              <div className="w-1/2 bg-gradient-to-br from-orange-600 to-orange-500 text-white flex flex-col justify-between p-4 transition-all duration-500 group-hover:from-orange-700 group-hover:to-orange-600">
                 <h3 className="text-sm font-semibold leading-snug">
                   {card.title}
                 </h3>
-                <button className="mt-3 px-4 py-2 bg-white text-orange-600 rounded-md shadow hover:bg-gray-100">
+
+                <a
+                  href="#donation-form"
+                  className="mt-3 px-4 py-2 bg-white text-orange-600 font-semibold rounded-md shadow-md hover:bg-gray-100 transition-all duration-300"
+                >
                   Donate
-                </button>
+                </a>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Soft fade bottom border */}
+      <div className="mt-12 w-32 h-1 bg-orange-600 mx-auto rounded-full"></div>
     </div>
   );
 };
