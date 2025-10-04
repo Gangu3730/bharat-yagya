@@ -7,6 +7,7 @@ import Contributors from "./Contributors";
 import VideoCarousel from "./VideoCarousel";
 import FAQSection from "./FAQSection";
 import NationPledge from "./NationPledge";
+import Footer from "./Footer";
 
 function Section({ id, className = "", children }) {
   return (
@@ -48,6 +49,8 @@ export default function App() {
       </Section>
 
       <NationPledge />
+
+      <Footer />
     </main>
   );
 }

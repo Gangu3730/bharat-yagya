@@ -1,63 +1,65 @@
 /* ================================
    Seva Donation – Green Layout (Scoped to #raaj-seva)
-   ================================ */
+   Optimized & Polished
+================================ */
 
-/* --- Page band + title --- */
+/* Page band + title */
 #raaj-seva.seva-wrap{
-  background: linear-gradient(180deg, #e8efd9 0%, #dfe8c9 100%);
-  padding: 16px 10px 24px;
+  background: linear-gradient(180deg,rgb(207, 138, 101) 0%,#e7c190 100%);
+  padding: 24px 12px 34px;
   box-sizing: border-box;
 }
 #raaj-seva .seva-title{
   text-align:center;
-  margin:6px 0 12px;
-  color:#2c3a15;
+  margin:6px auto 16px;
+  color:#23300f;
   font-weight:800;
-  font-size:22px;
+  font-size:clamp(20px,2.4vw,28px);
   line-height:1.25;
+  letter-spacing:.15px;
+  max-width:960px;
 }
 
-
-/* --- Main Box --- */
+/* Main Box */
 #raaj-seva .donation-box.green-skin{
-  --brand: #8f481c;
-  --brand-2: #9e6007;
+  --brand:#8f481c;
+  --brand-2:#9e6007;
   --border:#cfd8b2;
   --muted:#eef3e0;
   --text:#293517;
 
-  max-width:1080px;
-  margin: 0 auto;
+  max-width:1120px;
+  margin:0 auto;
   border:1px solid var(--border);
-  box-shadow: 0 6px 20px rgba(85,107,47,.12);
-  border-radius:14px;
   background:#f2f6e8;
-  padding:12px;
+  border-radius:16px;
+  padding:16px;
   display:grid;
-  grid-template-columns: 1.2fr .9fr;
-  gap:12px;
-  box-sizing: border-box;
+  grid-template-columns:1.2fr .9fr;
+  gap:14px;
+  box-sizing:border-box;
+  box-shadow:0 10px 28px rgba(85,107,47,.12);
 }
 
-/* --- Left Panel (Form) --- */
+/* Left Panel (Form) */
 #raaj-seva .donation-box.green-skin .donation-form{
-  background: linear-gradient(180deg, #de6e36 0%, #9a5809 100%);
-  border-radius:12px;
-  padding:14px;
-  box-sizing: border-box;
+  background: linear-gradient(180deg,#e1723a 0%,#9f5e12 100%);
+  border-radius:14px;
+  padding:16px;
+  box-sizing:border-box;
 }
 #raaj-seva .donation-box.green-skin .row-2{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:12px;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
 #raaj-seva .donation-box.green-skin .field{ width:100%; }
 #raaj-seva .donation-box.green-skin .hide-mobile{ display:block; }
 
 #raaj-seva .donation-box.green-skin .donation-form label{
   display:block;
-  color:#1d240d;
-  font-weight:700;
+  color:#17210b;
+  font-weight:800;
   font-size:13px;
   margin:6px 0 6px;
 }
@@ -67,17 +69,18 @@
 #raaj-seva .donation-box.green-skin select,
 #raaj-seva .donation-box.green-skin textarea{
   width:100%;
-  height:40px;
+  height:42px;
   border:1px solid #d7dfbf;
   background:#fff;
-  border-radius:10px;
-  padding:8px 10px;
+  border-radius:12px;
+  padding:9px 12px;
   color:#111;
   outline:none;
   box-sizing:border-box;
   font:inherit;
+  transition:border-color .15s ease, box-shadow .15s ease, background .15s ease, transform .06s ease;
 }
-#raaj-seva .donation-box.green-skin textarea{ min-height: 90px; resize: vertical; }
+#raaj-seva .donation-box.green-skin textarea{ min-height:96px; resize:vertical; }
 #raaj-seva .donation-box.green-skin input::placeholder,
 #raaj-seva .donation-box.green-skin textarea::placeholder{ color:#9aa3a1; }
 
@@ -85,7 +88,8 @@
 #raaj-seva .donation-box.green-skin select:focus,
 #raaj-seva .donation-box.green-skin textarea:focus{
   border-color:#b2c18b;
-  box-shadow: 0 0 0 3px rgba(85,107,47,.18);
+  box-shadow:0 0 0 3px rgba(85,107,47,.18);
+  background:#fffeF9;
 }
 
 /* Phone with +91 chip */
@@ -93,20 +97,23 @@
   position:relative;
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:10px;
 }
 #raaj-seva .donation-box.green-skin .phone-wrap .cc{
   flex:0 0 auto;
   background:#f3f6ea;
   border:1px solid #d7dfbf;
-  padding:8px 10px;
-  border-radius:10px;
+  padding:9px 12px;
+  border-radius:12px;
   color:#314019;
-  font-weight:700;
+  font-weight:800;
+  height:42px;
+  display:inline-flex;
+  align-items:center;
 }
 #raaj-seva .donation-box.green-skin .phone-wrap input{ flex:1; }
 
-/* Hint text under DOB */
+/* Hint under DOB */
 #raaj-seva .donation-box.green-skin .hint{
   display:block;
   margin-top:6px;
@@ -116,125 +123,137 @@
 
 /* Amount chips */
 #raaj-seva .donation-box.green-skin .chips{
-  margin:8px 0 12px;
+  margin:6px 0 14px;
   display:grid;
-  grid-template-columns: repeat(6, minmax(0,1fr));
-  gap:8px;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:10px;
 }
 #raaj-seva .donation-box.green-skin .chips button{
-  background:#f9fbf1;
+  background:#fafdf3;
   border:1px solid #d7dfbf;
-  color:#314019;
+  color:#2a3a14;
   border-radius:999px;
-  padding:8px 10px;
-  height:34px;
+  padding:8px 12px;
+  height:36px;
   font-weight:800;
   cursor:pointer;
-  white-space: nowrap;
-  transition: background .15s ease, border-color .15s ease;
+  white-space:nowrap;
+  transition:background .15s ease, border-color .15s ease, transform .06s ease, box-shadow .15s ease;
 }
 #raaj-seva .donation-box.green-skin .chips button:hover{
-  background:#eef3e0;
-  border-color:#c9d5a7;
+  background:#eff5e4;
+  border-color:#c6d3a8;
+  transform:translateY(-1px);
+  box-shadow:0 6px 12px rgba(61,79,31,.12);
+}
+#raaj-seva .donation-box.green-skin .chips button:active{
+  transform:translateY(0);
 }
 
 /* Donate button */
 #raaj-seva .donation-box.green-skin .donate-btn{
-  margin-top:60px;
+  margin-top:18px;
   width:100%;
-  height:42px;
-  border-radius:10px;
+  height:44px;
+  border-radius:12px;
   border:0;
-  background:#593107;
+  background:linear-gradient(180deg,#5b330a 0%,#4b2907 100%);
   color:#fff;
   font-weight:800;
   cursor:pointer;
-  transition: transform .03s ease, filter .15s ease;
+  letter-spacing:.2px;
+  box-shadow:0 10px 18px rgba(75,41,7,.22);
+  transition:transform .04s ease, filter .15s ease, box-shadow .15s ease;
 }
-#raaj-seva .donation-box.green-skin .donate-btn:hover{ filter: brightness(1.03); }
-#raaj-seva .donation-box.green-skin .donate-btn:active{ transform: translateY(1px); }
+#raaj-seva .donation-box.green-skin .donate-btn:hover{
+  filter:brightness(1.04);
+  box-shadow:0 12px 22px rgba(75,41,7,.26);
+}
+#raaj-seva .donation-box.green-skin .donate-btn:active{ transform:translateY(1px); }
+#raaj-seva .donation-box.green-skin .donate-btn:disabled{ opacity:.75; cursor:not-allowed; }
 
-/* ===== Right-side composite card ===== */
+/* Right-side composite card */
 #raaj-seva .donation-box.green-skin .right-combo{
   background:#f7faef;
   border:1px solid #cfd8b2;
-  border-radius:12px;
-  padding:12px;
+  border-radius:14px;
+  padding:16px;
 }
 #raaj-seva .donation-box.green-skin .rc-grid{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:16px;
 }
 #raaj-seva .donation-box.green-skin .rc-col{ background:#f7faef; }
 #raaj-seva .donation-box.green-skin .rc-title{
-  display:flex; align-items:center; gap:6px;
-  margin:0 0 8px; font-size:16px; font-weight:800; color:#2c3a15;
+  display:flex; align-items:center; gap:8px;
+  margin:0 0 10px;
+  font-size:16px; font-weight:800; color:#23300f;
 }
 #raaj-seva .donation-box.green-skin .ico{ color:#2f3c19; }
 
+/* QR */
 #raaj-seva .donation-box.green-skin .raaj-qr{
-  width:210px; max-width:100%;
-  display:block; margin:4px auto 6px;
-  border:2px solid #9eb476; border-radius:10px;
+  width:220px; max-width:100%;
+  display:block; margin:6px auto 8px;
+  border:2px solid #9eb476; border-radius:12px;
 }
 
-/* UPI line with tiny copy button */
+/* UPI line */
 #raaj-seva .donation-box.green-skin .upi-line{
-  display:flex; align-items:center; justify-content:center; gap:6px;
+  display:flex; align-items:center; justify-content:center; gap:8px;
 }
 #raaj-seva .donation-box.green-skin .upi-line code{
   background:#eef3e0; border:1px solid #d7dfbf;
-  padding:4px 8px; border-radius:6px; font-size:13px;
+  padding:6px 10px; border-radius:8px; font-size:13px;
 }
 #raaj-seva .donation-box.green-skin .micro-copy{
   display:inline-flex; align-items:center; justify-content:center;
-  width:26px; height:26px; border-radius:6px; border:1px solid #cfd8b2;
+  width:28px; height:28px; border-radius:8px; border:1px solid #cfd8b2;
   background:#593107; color:#fff; cursor:pointer;
-  transition:transform .03s ease, filter .15s ease;
+  transition:transform .04s ease, filter .15s ease, box-shadow .15s ease;
+  box-shadow:0 6px 12px rgba(75,41,7,.18);
 }
+#raaj-seva .donation-box.green-skin .micro-copy:hover{ filter:brightness(1.05); }
 #raaj-seva .donation-box.green-skin .micro-copy:active{ transform: translateY(1px); }
 
 /* Bank list + copy strip */
-#raaj-seva .donation-box.green-skin .bank-list{ list-style:none; margin:0 0 8px; padding:0; }
+#raaj-seva .donation-box.green-skin .bank-list{ list-style:none; margin:0 0 10px; padding:0; }
 #raaj-seva .donation-box.green-skin .bank-list li{
-  margin:6px 0; color:#2f3c19; font-size:14px;
+  margin:6px 0; color:#2b3a14; font-size:14px;
 }
-#raaj-seva .donation-box.green-skin .bank-list b{ font-weight:800; color:#22300f; }
+#raaj-seva .donation-box.green-skin .bank-list b{ font-weight:800; color:#1e2b0d; }
 
 #raaj-seva .donation-box.green-skin .copy-strip{
-  width:100%; height:38px; border:0; border-radius:10px;
+  width:100%; height:40px; border:0; border-radius:12px;
   background:#593107; color:#fff; font-weight:800; cursor:pointer;
   display:flex; align-items:center; justify-content:center; gap:8px;
+  box-shadow:0 10px 18px rgba(75,41,7,.18);
+  transition:filter .15s ease, transform .04s ease, box-shadow .15s ease;
 }
-/* ===== Logo badges – size fix (scoped) ===== */
-#raaj-seva .badges { gap: 10px; }
+#raaj-seva .donation-box.green-skin .copy-strip:hover{
+  filter:brightness(1.05);
+  box-shadow:0 12px 22px rgba(75,41,7,.22);
+}
+#raaj-seva .donation-box.green-skin .copy-strip:active{ transform: translateY(1px); }
 
+/* Logo badges */
+#raaj-seva .badges{ display:flex; gap:10px; flex-wrap:wrap; }
 #raaj-seva .badge.logos{
-  padding: 6px 10px;
-  border: 1px solid #d7dfbf;
-  border-radius: 999px;
-  background: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;          /* chip ki minimum height */
+  padding:6px 12px;
+  border:1px solid #d7dfbf;
+  border-radius:999px;
+  background:#fff;
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:36px;
 }
-
 #raaj-seva .badge.logos img{
-  height: 22px;              /* <- yahin se size control karo (18–24px) */
-  width: auto;
-  max-width: 90px;           /* extra-wide SVGs ko limit */
-  object-fit: contain;
-  display: block;
+  height:20px; width:auto; max-width:90px; object-fit:contain; display:block;
 }
 
-/* Mobile par thoda aur compact */
-@media (max-width: 640px){
-  #raaj-seva .badge.logos img{
-    height: 18px;
-    max-width: 72px;
-  }
+/* Mobile compact logos */
+@media (max-width:640px){
+  #raaj-seva .badge.logos img{ height:18px; max-width:72px; }
 }
 
 /* Notes / Support / Badges */
@@ -242,21 +261,20 @@
 #raaj-seva .donation-box.green-skin .rc-notes .tiny{
   font-size:12px; color:#55624a; margin:4px 0; line-height:1.35;
 }
-
 #raaj-seva .donation-box.green-skin .rc-support{ margin-top:8px; }
 #raaj-seva .donation-box.green-skin .rc-support h4{
-  margin:6px 0; font-size:15px; color:#2c3a15; font-weight:800;
+  margin:6px 0; font-size:15px; color:#263311; font-weight:800;
 }
 #raaj-seva .donation-box.green-skin .support-row{
   display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-bottom:8px;
 }
 #raaj-seva .donation-box.green-skin .support-link{
   display:inline-flex; align-items:center; gap:6px;
-  color:#2a4e0d; text-decoration:none; font-weight:700;
+  color:#244a0d; text-decoration:none; font-weight:700;
+  transition:opacity .15s ease;
 }
-#raaj-seva .donation-box.green-skin .support-link:hover{ text-decoration:underline; }
+#raaj-seva .donation-box.green-skin .support-link:hover{ text-decoration:underline; opacity:.9; }
 
-#raaj-seva .donation-box.green-skin .badges{ display:flex; gap:8px; flex-wrap:wrap; }
 #raaj-seva .donation-box.green-skin .pill{
   display:inline-block; padding:6px 12px; border-radius:999px;
   font-size:12px; font-weight:800; color:#fff;
@@ -264,19 +282,9 @@
 #raaj-seva .donation-box.green-skin .pill.green{ background:#27ae60; }
 #raaj-seva .donation-box.green-skin .pill.orange{ background:#ff8c2a; }
 
-#raaj-seva .donation-box.green-skin .badge.logos{
-  display:inline-block; padding:6px 10px; border-radius:999px;
-  background:#fff; border:1px solid #d7dfbf; color:#2f3c19; font-weight:700;
-}
-
-/* Responsive: stack UPI & Bank */
-@media (max-width: 720px){
-  #raaj-seva .donation-box.green-skin .rc-grid{ grid-template-columns: 1fr; gap:12px; }
-}
-
 /* Thank-you box */
 #raaj-seva .donation-box.green-skin .thankyou-box{
-  margin-top:8px;
+  margin-top:10px;
   background:#f7faef;
   border:1px solid var(--border);
   border-radius:12px;
@@ -287,24 +295,20 @@
 #raaj-seva .donation-box.green-skin .text-center{ text-align:center; }
 #raaj-seva .donation-box.green-skin .d-none{ display:none; }
 
-/* --- Responsive --- */
-@media (max-width: 1060px){
+/* Responsive */
+@media (max-width:1060px){
   #raaj-seva .currency-tabs{ margin-inline: 10px; }
 }
-@media (max-width: 960px){
-  #raaj-seva .donation-box.green-skin{ grid-template-columns: 1fr; }
+@media (max-width:960px){
+  #raaj-seva .donation-box.green-skin{ grid-template-columns:1fr; padding:14px; gap:12px; }
   #raaj-seva .donation-box.green-skin .hide-mobile{ display:none; }
 }
-@media (max-width: 640px){
+@media (max-width:640px){
   #raaj-seva .seva-title{ font-size:20px; }
-  #raaj-seva .donation-box.green-skin .row-2{ grid-template-columns: 1fr; }
-  #raaj-seva .donation-box.green-skin .chips{
-    grid-template-columns: repeat(3, minmax(0,1fr));
-  }
-  #raaj-seva .donation-box.green-skin .raaj-qr{ width:180px; }
+  #raaj-seva .donation-box.green-skin .row-2{ grid-template-columns:1fr; }
+  #raaj-seva .donation-box.green-skin .chips{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+  #raaj-seva .donation-box.green-skin .raaj-qr{ width:190px; }
 }
-@media (max-width: 420px){
-  #raaj-seva .donation-box.green-skin .chips{
-    grid-template-columns: repeat(2, minmax(0,1fr));
-  }
+@media (max-width:420px){
+  #raaj-seva .donation-box.green-skin .chips{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }

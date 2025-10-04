@@ -1,32 +1,22 @@
-import React from 'react'
+import React from "react";
 
-
-   function Section({ id, className = "", children }) {
+export default function MainHero() {
   return (
-    <section id={id} className={`scroll-mt-24 ${className}`}>
-      {children}
-    </section>
-  );
-}
-
-function MainHero() {
-  return (
-    <div className="relative">
-      <a href="#donation-form">
-        <img
-          src="/desktopbanner.webp"
-          alt="Mahayagya Desktop Banner"
-          className="hidden md:block h-screen w-full object-cover"
-        />
-        <img
-          src="/mobilebanner.webp"
-          alt="Mahayagya Mobile Banner"
-          className="block md:hidden h-screen w-full object-cover"
-        />
+    <div className="w-full">
+      <a href="#donation-form" aria-label="Go to Donation Form" className="block">
+        <picture>
+          {/* Desktop image */}
+          <source media="(min-width: 768px)" srcSet="/desktopbanner.webp" />
+          {/* Mobile fallback */}
+          <img
+            src="/mobilebanner.webp"
+            alt="Mahayagya Banner"
+            className="block w-full h-auto select-none"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
       </a>
     </div>
   );
 }
-
-
-export default MainHero
