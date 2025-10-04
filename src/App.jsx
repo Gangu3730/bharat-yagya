@@ -3,11 +3,11 @@ import MainHero from "./MainHero";
 import PitruSlider from "./PitruSlider";
 import DonationForm from "./DonationForm";
 import DonationOptionCards from "./DonationOptionCards";
-import Contributors from "./contributors";
+import Contributors from "./Contributors";
 import VideoCarousel from "./VideoCarousel";
 import FAQSection from "./FAQSection";
 import NationPledge from "./NationPledge";
-import './index.css';
+
 
 function Section({ id, className = "", children }) {
   return (
