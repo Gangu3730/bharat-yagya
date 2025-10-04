@@ -1,56 +1,30 @@
 import React from "react";
-import MainHero from "./MainHero";
-import PitruSlider from "./PitruSlider";
-import DonationForm from "./DonationForm";
-import DonationOptionCards from "./DonationOptionCards";
-import Contributors from "./Contributors";
-import VideoCarousel from "./VideoCarousel";
-import FAQSection from "./FAQSection";
-import NationPledge from "./NationPledge";
-import Footer from "./Footer";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ThankYou from "./pages/ThankYou";
 
-function Section({ id, className = "", children }) {
-  return (
-    <section id={id} className={`scroll-mt-24 ${className}`}>
-      {children}
-    </section>
-  );
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  React.useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [pathname, hash]);
+  return null;
 }
 
 export default function App() {
   return (
-    <main>
-      <Section id="home">
-        <MainHero />
-      </Section>
-
-      <Section id="pitru-slider" className="bg-orange-50">
-        <PitruSlider />
-      </Section>
-
-      <Section id="donation-cards" className="bg-orange-50">
-        <DonationOptionCards />
-      </Section>
-
-      <Section id="contributors" className="bg-orange-100">
-        <Contributors />
-      </Section>
-
-      <Section id="donation-form" className="bg-orange-50">
-        <DonationForm />
-      </Section>
-
-      <Section id="video-carousel" className="bg-orange-50">
-        <VideoCarousel />
-      </Section>
-
-      <Section id="faq-section" className="bg-orange-50">
-        <FAQSection />
-      </Section>
-
-      <NationPledge />
-
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -36,8 +36,14 @@ export default function DonationForm() {
   };
 
   const handlePayment = async () => {
+    // basic validation
     if (!donor.name || !donor.phone || !donor.email || !donor.amount) {
       alert("⚠️ Please fill all required fields");
+      return;
+    }
+    const amt = parseInt(donor.amount, 10);
+    if (!Number.isFinite(amt) || amt <= 0) {
+      alert("⚠️ Enter a valid amount");
       return;
     }
     if (!window.Razorpay) {
@@ -48,11 +54,11 @@ export default function DonationForm() {
     try {
       setLoading(true);
 
-      // 1) Create order on server (server must return {success,key,orderId,amount,currency})
+      // 1) Create order on server
       const res = await fetch(`${API}/create-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(donor),
+        body: JSON.stringify({ ...donor, amount: amt }),
       });
       const data = await res.json();
       if (!data?.success) {
@@ -76,16 +82,26 @@ export default function DonationForm() {
           contact: donor.phone,
         },
         theme: { color: "#e65100" },
+
+        // On success: save + redirect to Thank You with donationId
         handler: async function (response) {
-          alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
-          // Optional: save donor + payment on your server
           try {
-            await fetch(`${API}/save-donor`, {
+            const save = await fetch(`${API}/donations`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ donor, payment: response }),
-            });
-          } catch {}
+              body: JSON.stringify({ donor: { ...donor, amount: amt }, payment: response }),
+            }).then((r) => r.json());
+
+            if (save?.success && save.id) {
+              const nameQS = encodeURIComponent(donor.name || "");
+              window.location.href = `/thank-you?donationId=${save.id}&name=${nameQS}`;
+            } else {
+              alert("Payment saved, but could not generate receipt. Please contact support.");
+            }
+          } catch (e) {
+            console.error("Save donor error:", e);
+            alert("Payment succeeded but save failed. Please contact support.");
+          }
         },
       };
 
@@ -106,6 +122,7 @@ export default function DonationForm() {
       </h2>
 
       <div className="donation-box green-skin">
+        {/* --- Left Form --- */}
         <div className="donation-form">
           <div className="row-2">
             <div className="field">
@@ -131,6 +148,7 @@ export default function DonationForm() {
             </div>
           </div>
 
+          {/* Chips */}
           <div className="amount-options chips">
             {presetAmounts.map((amt) => (
               <button
@@ -218,6 +236,7 @@ export default function DonationForm() {
           </button>
         </div>
 
+        {/* --- Right Combo (QR + Bank) --- */}
         <div className="right-combo">
           <div className="rc-grid">
             <section className="rc-col upi">
